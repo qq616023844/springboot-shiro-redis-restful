@@ -18,6 +18,18 @@ public class SpringbootShiroRestfulApplicationTests {
     public void contextLoads() {
         System.out.println("运行中");
         System.out.println(myService.getStudent(1));
+
+        System.out.println("运行中");
+        System.out.println(myService.getStudent(2));
+
+        System.out.println("运行中");
+        System.out.println(myService.removeStudent(2));
+
+        System.out.println("运行中");
+        System.out.println(myService.getStudent(2));
+
+        System.out.println("运行中");
+        System.out.println(myService.removeStudent(1));
     }
 
 }
