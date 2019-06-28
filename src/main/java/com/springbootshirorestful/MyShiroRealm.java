@@ -10,13 +10,12 @@ import org.apache.shiro.util.ByteSource;
 import javax.annotation.Resource;
 
 public class MyShiroRealm extends AuthorizingRealm {
-
+    
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-
         info.addStringPermission("userInfo:view");
-        return null;
+        return info;
     }
 
     @Override

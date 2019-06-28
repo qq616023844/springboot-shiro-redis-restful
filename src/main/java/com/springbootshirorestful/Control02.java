@@ -1,5 +1,6 @@
 package com.springbootshirorestful;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ public class Control02 {
     @RequiresPermissions("userInfo:view")//权限管理;
     public String userInfo(){
         System.out.println("has userInfo");
-        return "userInfo123";
+        //return (String) SecurityUtils.getSubject().getSession().getAttribute("currentUserId");
+        return "123";
     }
 }

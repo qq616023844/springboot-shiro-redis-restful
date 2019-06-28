@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 @Service
 public class MyService {
     @Resource
-    private MyDao myDao;
+    private MyDao myDao ;
 
     @Cacheable(value = "studentCache")
     public String getStudent(int id){

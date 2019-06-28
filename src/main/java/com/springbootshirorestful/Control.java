@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.util.WebUtils;
 
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +27,9 @@ public class Control {
         System.out.println("has login");
         //验证是否登录成功
         if(currentUser.isAuthenticated()){
+            SecurityUtils.getSubject().getSession().setAttribute("currentUserId",username);
             System.out.println("认证通过");
+
         }else{
             token.clear();  return "认证未通过";
         }
