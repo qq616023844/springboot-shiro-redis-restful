@@ -1,9 +1,12 @@
 package com.springbootshirorestful;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
+@Proxy(lazy = false)
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
